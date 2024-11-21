@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Participante</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <img src="/static/img/logo.png" alt="Mascota" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/views/">Inicio</a></li>
+                <li><a href="/views/participants">Lista de Participantes</a></li>
+                <li><a href="/views/results">Resultados</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+        <a href="/views/dashboard" >Dashboard</a>
+        <a href="/views/logout" >Cerrar Sesión</a>
+    </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <h1 class="title">Añadir Participante</h1>
+        <h2 class="subtitle">Registrar un Nuevo Participante</h2>
+        
+        <div class="form-container">
+            <form method="POST" action="/views/add_participant">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="age">Edad:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="country">País:</label>
+                <input type="text" id="country" name="country" required>
+
+                <button type="submit" class="submit-button">Registrar Participante</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

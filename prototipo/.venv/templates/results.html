@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Competencia</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <img src="/static/img/logo.png" alt="Mascota" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/views/">Inicio</a></li>
+                <li><a href="/views/participants">Lista de Participantes</a></li>
+                <li><a href="/views/results">Resultados</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            {% if session.get('logged_in') %}
+                <a href="/views/dashboard">Dashboard</a>
+                <a href="/views/logout">Cerrar Sesión</a>
+            {% else %}
+                <a href="/views/login">Iniciar Sesión</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Título de la página -->
+    <main class="main-content">
+        <h1>RESULTADOS DE LA COMPETENCIA DE SUELO</h1>
+        
+        <!-- Tabla de Resultados -->
+        <div class="results-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre del Participante</th>
+                        <th>Puntaje Total</th>
+                        <th>Dificultad</th>
+                        <th>Ejecución</th>
+                        <th>Penalizaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                    <tr>
+                        <td>{{ result[0] }}</td>
+                        <td>{{ result[1] }}</td>
+                        <td>{{ result[2] }}</td>
+                        <td>{{ result[3] }}</td>
+                        <td>{{ result[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

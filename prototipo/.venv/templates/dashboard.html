@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Juez</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <img src="/static/img/logo.png" alt="Mascota" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/views/">Inicio</a></li>
+                <li><a href="/views/participants">Lista de Participantes</a></li>
+                <li><a href="/views/results">Resultados</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+        <a href="/views/dashboard" >Dashboard</a>
+        <a href="/views/logout" >Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+
+        <h2 class="subtitle">Dashboard del Juez</h2>
+        
+        <div class="dashboard-buttons-container">
+            <a href="/views/add_participant" class="dashboard-button">Añadir Participante</a>
+            <a href="/views/score" class="dashboard-button">Añadir Puntaje a Participante</a>
+        </div>
+    </main>
+</body>
+</html>
